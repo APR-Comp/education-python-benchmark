@@ -6113,11 +6113,17 @@
         "extra_files": [],
         "line_numbers": [],
         "passing_test": [
-            "test_001.py::test_001"
+            "test_006.py::test_006"
         ],
-        "failing_test": [],
+        "failing_test": [
+            "test_001.py::test_001",
+            "test_002.py::test_002",
+            "test_003.py::test_003",
+            "test_004.py::test_004",
+            "test_005.py::test_005"
+        ],
         "count_pos": "1",
-        "count_neg": "0",
+        "count_neg": "5",
         "exploit_file_list": [
             "question_4/ans/input_001.txt",
             "question_4/ans/input_002.txt",
@@ -6377,12 +6383,16 @@
             "global.py"
         ],
         "line_numbers": [],
-        "passing_test": [
-            "test_001.py::test_001"
+        "passing_test": [],
+        "failing_test": [
+            "test_001.py::test_001",
+            "test_002.py::test_002",
+            "test_003.py::test_003",
+            "test_004.py::test_004",
+            "test_005.py::test_005"
         ],
-        "failing_test": [],
-        "count_pos": "1",
-        "count_neg": "0",
+        "count_pos": "0",
+        "count_neg": "5",
         "exploit_file_list": [
             "question_5/ans/input_001.txt",
             "question_5/ans/input_002.txt",
@@ -6643,12 +6653,16 @@
             "global.py"
         ],
         "line_numbers": [],
-        "passing_test": [
-            "test_001.py::test_001"
+        "passing_test": [],
+        "failing_test": [
+            "test_001.py::test_001",
+            "test_002.py::test_002",
+            "test_003.py::test_003",
+            "test_004.py::test_004",
+            "test_005.py::test_005"
         ],
-        "failing_test": [],
-        "count_pos": "1",
-        "count_neg": "0",
+        "count_pos": "0",
+        "count_neg": "5",
         "exploit_file_list": [
             "question_5/ans/input_001.txt",
             "question_5/ans/input_002.txt",
