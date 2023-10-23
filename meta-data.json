@@ -4992,8 +4992,8 @@
     {
         "id": 64,
         "subject": "question_4",
-        "bug_id": "277",
-        "source_file": "wrong_4_277.py",
+        "bug_id": "278",
+        "source_file": "wrong_4_278.py",
         "reference_file": "reference.py",
         "correct_files": [
             "question_4/ans/correct_4_001.py",
@@ -5029,17 +5029,19 @@
         ],
         "extra_files": [],
         "line_numbers": [],
-        "passing_test": [
-            "test_001.py::test_001",
+        "failing_test": [
             "test_002.py::test_002",
             "test_003.py::test_003",
             "test_004.py::test_004",
-            "test_005.py::test_005",
-            "test_006.py::test_006"
+            "test_005.py::test_005"
         ],
-        "failing_test": [],
-        "count_pos": "6",
-        "count_neg": "0",
+        "passing_test": [
+            "test_001.py::test_001",
+            "test_006.py::test_006"
+
+        ],
+        "count_pos": "2",
+        "count_neg": "4",
         "exploit_file_list": [
             "question_4/ans/input_001.txt",
             "question_4/ans/input_002.txt",
@@ -5127,8 +5129,8 @@
     {
         "id": 66,
         "subject": "question_4",
-        "bug_id": "287",
-        "source_file": "wrong_4_287.py",
+        "bug_id": "288",
+        "source_file": "wrong_4_288.py",
         "reference_file": "reference.py",
         "correct_files": [
             "question_4/ans/correct_4_001.py",
@@ -5164,7 +5166,7 @@
         ],
         "extra_files": [],
         "line_numbers": [],
-        "passing_test": [
+        "failing_test": [
             "test_001.py::test_001",
             "test_002.py::test_002",
             "test_003.py::test_003",
@@ -5172,9 +5174,9 @@
             "test_005.py::test_005",
             "test_006.py::test_006"
         ],
-        "failing_test": [],
-        "count_pos": "6",
-        "count_neg": "0",
+        "passing_test": [],
+        "count_pos": "0",
+        "count_neg": "6",
         "exploit_file_list": [
             "question_4/ans/input_001.txt",
             "question_4/ans/input_002.txt",
@@ -5602,8 +5604,8 @@
     {
         "id": 73,
         "subject": "question_4",
-        "bug_id": "322",
-        "source_file": "wrong_4_322.py",
+        "bug_id": "323",
+        "source_file": "wrong_4_323.py",
         "reference_file": "reference.py",
         "correct_files": [
             "question_4/ans/correct_4_001.py",
@@ -5640,16 +5642,17 @@
         "extra_files": [],
         "line_numbers": [],
         "passing_test": [
-            "test_001.py::test_001",
+            "test_001.py::test_001"
+        ],
+        "failing_test": [
             "test_002.py::test_002",
             "test_003.py::test_003",
             "test_004.py::test_004",
             "test_005.py::test_005",
             "test_006.py::test_006"
         ],
-        "failing_test": [],
-        "count_pos": "6",
-        "count_neg": "0",
+        "count_pos": "5",
+        "count_neg": "1",
         "exploit_file_list": [
             "question_4/ans/input_001.txt",
             "question_4/ans/input_002.txt",
@@ -5873,8 +5876,8 @@
     {
         "id": 77,
         "subject": "question_4",
-        "bug_id": "342",
-        "source_file": "wrong_4_342.py",
+        "bug_id": "343",
+        "source_file": "wrong_4_343.py",
         "reference_file": "reference.py",
         "correct_files": [
             "question_4/ans/correct_4_001.py",
@@ -5910,7 +5913,8 @@
         ],
         "extra_files": [],
         "line_numbers": [],
-        "passing_test": [
+        "passing_test": [],
+        "failing_test": [
             "test_001.py::test_001",
             "test_002.py::test_002",
             "test_003.py::test_003",
@@ -5918,9 +5922,8 @@
             "test_005.py::test_005",
             "test_006.py::test_006"
         ],
-        "failing_test": [],
-        "count_pos": "6",
-        "count_neg": "0",
+        "count_pos": "0",
+        "count_neg": "6",
         "exploit_file_list": [
             "question_4/ans/input_001.txt",
             "question_4/ans/input_002.txt",
@@ -6008,8 +6011,8 @@
     {
         "id": 79,
         "subject": "question_4",
-        "bug_id": "352",
-        "source_file": "wrong_4_352.py",
+        "bug_id": "353",
+        "source_file": "wrong_4_353.py",
         "reference_file": "reference.py",
         "correct_files": [
             "question_4/ans/correct_4_001.py",
@@ -6046,16 +6049,17 @@
         "extra_files": [],
         "line_numbers": [],
         "passing_test": [
+            "test_006.py::test_006"
+        ],
+        "failing_test": [
             "test_001.py::test_001",
             "test_002.py::test_002",
             "test_003.py::test_003",
             "test_004.py::test_004",
-            "test_005.py::test_005",
-            "test_006.py::test_006"
+            "test_005.py::test_005"
         ],
-        "failing_test": [],
-        "count_pos": "6",
-        "count_neg": "0",
+        "count_pos": "1",
+        "count_neg": "5",
         "exploit_file_list": [
             "question_4/ans/input_001.txt",
             "question_4/ans/input_002.txt",
