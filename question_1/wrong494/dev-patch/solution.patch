@@ -1,0 +1,17 @@
+--- question_1/wrong494/wrong_1_494.py	2023-11-27 23:06:57.592326484 +0200
++++ question_1/wrong494/reference.py	2023-11-27 23:06:57.592326484 +0200
+@@ -1,9 +1,5 @@
+ def search(x, seq):
+-    if seq == () or []:
+-        return None
+-    else:
+-        for i, elem in enumerate (seq):
+-            if x<=elem:
+-                return i
+-            elif x>seq[-1]:
+-                return len(seq)
++    for i in range(len(seq)):
++        if x <= seq[i]:
++            return i
++    return len(seq)
+\ No newline at end of file

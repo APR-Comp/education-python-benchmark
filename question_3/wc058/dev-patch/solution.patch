@@ -1,0 +1,25 @@
+--- question_3/wc058/wrong_correct_3_058.py	2023-11-27 23:06:57.828995473 +0200
++++ question_3/wc058/reference.py	2023-11-27 23:06:57.825662107 +0200
+@@ -1,16 +1,6 @@
+-def remove_extras ( var__0 ) : 
+-  var__1 = [ ] 
+-  try:
+-    sq=iter(var__0)
+-    while True:
+-      var__2=next(sq)
+-      
+-      if  var__2 not in var__1:
+-        pass
+-      else:
+-        var__1 . append ( var__2 ) 
+-  except StopIteration:
+-    pass
+-  var__0 = var__1 
+-  return var__0 
+-
++def remove_extras(lst):
++    newlist = []
++    for i in lst:
++        if i not in newlist:
++            newlist.append(i)
++    return newlist

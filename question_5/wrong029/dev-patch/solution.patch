@@ -1,0 +1,20 @@
+--- question_5/wrong029/wrong_5_029.py	2023-11-27 23:06:58.062331096 +0200
++++ question_5/wrong029/reference.py	2023-11-27 23:06:58.062331096 +0200
+@@ -1,10 +1,6 @@
+-def top_k(lst, k):
+-    sorted_list = []
+-    while lst:
+-        smallest = lst[0]
+-        for element in lst:
+-            if element < smallest:
+-                smallest = element
+-            lst.remove(element)
+-            sorted_list.append(element)
+-    return list.reverse(sorted_list)[:k-1]
++def top_k(lst, k):
++    ls = []
++    for i in range(k):
++        ls.append(max(lst))
++        lst.remove(max(lst))
++    return ls
+\ No newline at end of file

@@ -1,0 +1,34 @@
+--- question_1/wrong574/wrong_1_574.py	2023-11-27 23:06:57.668993903 +0200
++++ question_1/wrong574/reference.py	2023-11-27 23:06:57.668993903 +0200
+@@ -1,25 +1,5 @@
+-def search ( var__0 , var__1 ) : 
+-  """ Takes in a value x and a sorted sequence seq, and returns the
+-    position that x should go to such that the sequence remains sorted """ 
+-  if not var__1 != [ ] or var__1 == ( ):
+-    pass
+-  else:
+-    return 0 
+-    
+-  if var__0 < var__1 [ 0 ] : 
+-    return 0 
+-  elif var__0 > var__1 [ len ( var__1 ) - 1 ] : 
+-    return len ( var__1 ) 
+-  else : 
+-    try:
+-      Qpd=iter(range ( len ( var__1 ) - 1 ))
+-      while True:
+-        var__2=next(Qpd)
+-        
+-        if var__1 [ var__2 ] == var__0 : 
+-          return var__2 
+-        elif var__1 [ var__2 ] < var__0 and var__1 [ var__2 + 1 ] > var__0 : 
+-          return var__2 + 1 
+-    except StopIteration:
+-      pass
+-  
++def search(x, seq):
++    for i in range(len(seq)):
++        if x <= seq[i]:
++            return i
++    return len(seq)
+\ No newline at end of file

@@ -1,0 +1,24 @@
+--- question_3/wc040/wrong_correct_3_040.py	2023-11-27 23:06:57.818995375 +0200
++++ question_3/wc040/reference.py	2023-11-27 23:06:57.818995375 +0200
+@@ -1,15 +1,6 @@
+-def remove_extras ( var__0 ) : 
+-  var__1 = [ ] 
+-  try:
+-    WPhBgBy=iter(var__0)
+-    while True:
+-      var__2=next(WPhBgBy)
+-      
+-      if not var__2 in var__1:
+-        pass
+-      else:
+-        var__1 . append ( var__2 ) 
+-  except StopIteration:
+-    pass
+-  return var__1 
+-
++def remove_extras(lst):
++    newlist = []
++    for i in lst:
++        if i not in newlist:
++            newlist.append(i)
++    return newlist

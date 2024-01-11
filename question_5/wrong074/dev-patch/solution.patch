@@ -1,0 +1,28 @@
+--- question_5/wrong074/wrong_5_074.py	2023-11-27 23:06:58.102331488 +0200
++++ question_5/wrong074/reference.py	2023-11-27 23:06:58.102331488 +0200
+@@ -1,18 +1,6 @@
+-def top_k ( var__0 , var__1 ) : 
+-  var__2 = [ ] 
+-  var__3 = 0 
+-  while var__3 < var__1 : 
+-    try:
+-      kcwBgMU=iter(range ( - len ( var__0 ) , 0 ))
+-      while True:
+-        var__4=next(kcwBgMU)
+-        
+-        if not var__0 [ var__4 ] == max ( var__0 ):
+-          pass
+-        else:  
+-          var__2 . append ( var__0 . pop ( var__4 ) ) 
+-          var__3 += 1 
+-    except StopIteration:
+-      pass
+-  return var__2 
+-
++def top_k(lst, k):
++    ls = []
++    for i in range(k):
++        ls.append(max(lst))
++        lst.remove(max(lst))
++    return ls
+\ No newline at end of file

@@ -1,0 +1,31 @@
+--- question_4/wc040/wrong_correct_4_040.py	2023-11-27 23:06:57.932329820 +0200
++++ question_4/wc040/reference.py	2023-11-27 23:06:57.932329820 +0200
+@@ -1,19 +1,8 @@
+-def sort_age ( var__0 ) : 
+-  try:
+-    zF=iter(range ( 0 , len ( var__0 ) ))
+-    while True:
+-      var__1=next(zF)
+-      var__2 = var__0 [ var__1 ] 
+-      var__3 = 0 
+-      while var__3 > var__1 : 
+-        if not var__2 [ 1 ] > var__0 [ var__3 ] [ 1 ]:
+-          pass
+-        else:
+-          break
+-        var__3 += 1 
+-      del var__0 [ var__1 ] 
+-      var__0 . insert ( var__3 , var__2 )
+-  except StopIteration:
+-    pass
+-  return var__0 
+-
++def sort_age(lst):
++    for i in range(0, len(lst)-1):
++        for j in range(i+1, len(lst)):
++            if lst[i][1] < lst[j][1]:
++                tmp = lst[i]
++                lst[i] = lst[j]
++                lst[j] = tmp
++    return lst
+\ No newline at end of file

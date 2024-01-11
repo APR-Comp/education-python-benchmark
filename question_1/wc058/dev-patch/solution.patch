@@ -1,0 +1,37 @@
+--- question_1/wc058/wrong_correct_1_058.py	2023-11-27 23:06:57.582326386 +0200
++++ question_1/wc058/reference.py	2023-11-27 23:06:57.578993020 +0200
+@@ -1,28 +1,5 @@
+-def search ( var__0 , var__1 ) : 
+-  var__2 = list ( var__1 ) 
+-  if var__2 > [ ]:
+-    try:
+-      jC=iter(range ( len ( var__2 ) ))
+-      while True:
+-        var__3=next(jC)
+-          
+-        if not var__0 < var__2 [ var__3 ]:
+-          var__2 . insert ( len ( var__2 ) , var__0 )   
+-        else:
+-          var__2 . insert ( var__3 , var__0 ) 
+-    except StopIteration:
+-        pass
+-  else:
+-    var__2 . append ( var__0 ) 
+-  
+-  try:
+-    BUsFg=iter(range ( len ( var__2 ) ))
+-    while True:
+-      var__3=next(BUsFg)
+-      if var__2 [ var__3 ] == var__0:
+-          pass
+-      else:
+-          return var__3 
+-  except StopIteration:
+-    pass
+-
++def search(x, seq):
++    for i in range(len(seq)):
++        if x <= seq[i]:
++            return i
++    return len(seq)
+\ No newline at end of file

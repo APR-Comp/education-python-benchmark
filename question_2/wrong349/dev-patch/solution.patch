@@ -1,0 +1,39 @@
+--- question_2/wrong349/wrong_2_349.py	2023-11-27 23:06:57.712327662 +0200
++++ question_2/wrong349/reference.py	2023-11-27 23:06:57.712327662 +0200
+@@ -1,26 +1,19 @@
+ def unique_day(day, possible_birthdays):
+-    b=[]  # list of dates
++    count = 0
+     for birthday in possible_birthdays:
+-        b.append(birthday[1])
+-    if b.count(day)==1:
+-        return True
+-    
+-    return False
++        if birthday[1] == day:
++            count += 1
++    return count == 1
+ 
+ def unique_month(month, possible_birthdays):
+-    b=[] 
++    count = 0
+     for birthday in possible_birthdays:
+-        b.append(birthday[0])
+-    if b.count(month)==1:
+-        return True
+-        
++        if birthday[0] == month:
++            count += 1
++    return count == 1
++
+ def contains_unique_day(month, possible_birthdays):
+-    b=[]
+     for birthday in possible_birthdays:
+-        if month == birthday[0]:
+-            b.append(birthday[1])  #add date to b
+-    for day in b:
+-        if unique_day(day,possible_birthdays)==True:
++        if birthday[0] == month and unique_day(birthday[1], possible_birthdays):
+             return True
+-    
+     return False

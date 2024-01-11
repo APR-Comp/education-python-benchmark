@@ -1,0 +1,51 @@
+--- question_2/wrong419/wrong_2_419.py	2023-11-27 23:06:57.782328348 +0200
++++ question_2/wrong419/reference.py	2023-11-27 23:06:57.778994982 +0200
+@@ -1,29 +1,19 @@
+-def unique_day ( var__0 , var__1 ) : 
+-  var__2 = -1 
+-  try:
+-    fk=iter(range ( len ( var__1 ) ))
+-    while True:
+-      var__3=next(fk)  
+-      if not var__0 == var__1 [ var__3 ] [ 1 ]:
+-        var__2 = var__2 
+-      else:
+-        var__2 += 1 
+-  except StopIteration:
+-    pass
+-  return var__2 == 1 
+-def unique_month ( var__4 , var__1 ) : 
+-  var__2 = 0 
+-  try:
+-    vLopKro=iter(range ( len ( var__1 ) ))
+-    while True:
+-      var__3=next(vLopKro)
+-      if not var__4 == var__1 [ var__3 ] [ 0 ]:
+-        var__2 = var__2 
+-      else:        
+-        var__2 += 1 
+-  except StopIteration:
+-    pass
+-  return var__2 == 1 
+-def contains_unique_day ( var__4 , var__1 ) : 
+-  return 
+-
++def unique_day(day, possible_birthdays):
++    count = 0
++    for birthday in possible_birthdays:
++        if birthday[1] == day:
++            count += 1
++    return count == 1
++
++def unique_month(month, possible_birthdays):
++    count = 0
++    for birthday in possible_birthdays:
++        if birthday[0] == month:
++            count += 1
++    return count == 1
++
++def contains_unique_day(month, possible_birthdays):
++    for birthday in possible_birthdays:
++        if birthday[0] == month and unique_day(birthday[1], possible_birthdays):
++            return True
++    return False

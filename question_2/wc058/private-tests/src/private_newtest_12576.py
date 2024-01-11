@@ -1,0 +1,6 @@
+from wrong_correct_2_058 import *
+
+import pytest
+@pytest.mark.timeout(5)
+def test_12576():
+    assert contains_unique_day("February",[('October', 9), ('April', 8)]) == False

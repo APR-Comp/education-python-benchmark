@@ -1,0 +1,14 @@
+--- question_3/wrong229/wrong_3_229.py	2023-11-27 23:06:57.842328937 +0200
++++ question_3/wrong229/reference.py	2023-11-27 23:06:57.842328937 +0200
+@@ -1,5 +1,6 @@
+-def remove_extras(lst):
+-    for i in lst:
+-        if lst.count(i) > 1:
+-            ((lst.reverse()).remove(i)).reverse
+-    return lst
++def remove_extras(lst):
++    newlist = []
++    for i in lst:
++        if i not in newlist:
++            newlist.append(i)
++    return newlist

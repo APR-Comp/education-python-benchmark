@@ -1,0 +1,24 @@
+--- question_5/wc022/wrong_correct_5_022.py	2023-11-27 23:06:58.032330801 +0200
++++ question_5/wc022/reference.py	2023-11-27 23:06:58.032330801 +0200
+@@ -1,14 +1,6 @@
+-def top_k ( var__0 , var__1 ) : 
+-  var__2 = [ ] 
+-  try:
+-    mR=iter(range ( var__1 ))
+-    while True:
+-      var__3=next(mR)
+-      
+-      var__4 = var__0 . index ( min ( var__0 ) ) 
+-      var__2 . append ( var__0 . pop ( var__4 ) ) 
+-    
+-  except StopIteration:
+-    pass
+-  return var__2 
+-
++def top_k(lst, k):
++    ls = []
++    for i in range(k):
++        ls.append(max(lst))
++        lst.remove(max(lst))
++    return ls
+\ No newline at end of file

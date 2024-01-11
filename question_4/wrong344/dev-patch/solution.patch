@@ -1,0 +1,28 @@
+--- question_4/wrong344/wrong_4_344.py	2023-11-27 23:06:58.008997239 +0200
++++ question_4/wrong344/reference.py	2023-11-27 23:06:58.008997239 +0200
+@@ -1,16 +1,8 @@
+-def sort_age ( var__0 ) : 
+-  var__1 = 0 
+-  var__2 = ( ) 
+-  try:
+-    eYv=iter(var__0)
+-    while True:
+-      var__3=next(eYv)
+-      if  var__3 [ 1 ] > var__1:
+-        tuple ( var__3 ) + var__2 
+-      else:
+-        var__2 += tuple ( var__3 ) 
+-        var__1 = var__3 [ 1 ] 
+-  except StopIteration:
+-    pass
+-  return var__2 
+-
++def sort_age(lst):
++    for i in range(0, len(lst)-1):
++        for j in range(i+1, len(lst)):
++            if lst[i][1] < lst[j][1]:
++                tmp = lst[i]
++                lst[i] = lst[j]
++                lst[j] = tmp
++    return lst
+\ No newline at end of file

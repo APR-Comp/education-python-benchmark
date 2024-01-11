@@ -1,0 +1,19 @@
+--- question_3/wrong254/wrong_3_254.py	2023-11-27 23:06:57.865662499 +0200
++++ question_3/wrong254/reference.py	2023-11-27 23:06:57.865662499 +0200
+@@ -1,10 +1,6 @@
+-def remove_extras ( var__0 ) : 
+-  var__1 = [ ] 
+-  if var__0 == [ ] : 
+-    return var__1 
+-  elif var__0 [ 0 ] in var__1 : 
+-    return var__1 + remove_extras ( var__0 [ 1 : ] ) 
+-  else : 
+-    var__1 += [ var__0 [ 0 ] ] 
+-    return var__1 + remove_extras ( var__0 [ 1 : ] ) 
+-  
++def remove_extras(lst):
++    newlist = []
++    for i in lst:
++        if i not in newlist:
++            newlist.append(i)
++    return newlist

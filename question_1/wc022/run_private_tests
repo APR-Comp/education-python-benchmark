@@ -1,0 +1,25 @@
+#!/bin/bash
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+benchmark_name=$(echo $script_dir | rev | cut -d "/" -f 3 | rev)
+project_name=$(echo $script_dir | rev | cut -d "/" -f 2 | rev)
+bug_id=$(echo $script_dir | rev | cut -d "/" -f 1 | rev)
+dir_name=/experiment/$benchmark_name/$project_name/$bug_id
+dir_test=$dir_name/src
+EXIT_CODE=1
+cd $dir_test
+for x in $dir_test/private-tests/src/*.py;
+do
+  echo $x
+  cp $x $dir_test
+  pytest $(basename $x) > /dev/null 2>&1
+  EXIT_CODE=$?
+  rm $(basename $x)
+  if [[ EXIT_CODE -ne 0 ]]
+  then
+    echo "FAIL"
+    break
+  fi;
+done
+
+exit $EXIT_CODE
+

@@ -1,0 +1,23 @@
+--- question_1/wrong539/wrong_1_539.py	2023-11-27 23:06:57.635660243 +0200
++++ question_1/wrong539/reference.py	2023-11-27 23:06:57.635660243 +0200
+@@ -1,14 +1,5 @@
+-def search ( var__0 , var__1 ) : 
+-  try:
+-    sDx=iter(range ( len ( var__1 ) ))
+-    while True:
+-      var__2=next(sDx)
+-      
+-      if var__1 [ var__2 ] >= var__0 : 
+-        break 
+-      elif var__1 [ - 1 ] < var__0 : 
+-        return len ( var__1 ) 
+-  except StopIteration:
+-    pass
+-  return var__2 
+-
++def search(x, seq):
++    for i in range(len(seq)):
++        if x <= seq[i]:
++            return i
++    return len(seq)
+\ No newline at end of file

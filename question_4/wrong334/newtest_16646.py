@@ -1,0 +1,6 @@
+from wrong_4_334 import *
+
+import pytest
+@pytest.mark.timeout(5)
+def test_16646():
+    assert sort_age([('F', 2), ('F', 25)]) == [('F', 25), ('F', 2)]

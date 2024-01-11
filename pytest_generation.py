@@ -1,7 +1,7 @@
 import os
 from os.path import join, isfile
 
-questions = [x for x in os.listdir() if not isfile(x) and "question" in x]
+questions = [x for x in os.listdir() if not isfile(x) and "question" in x and "old_" not in x]
 
 test_pattern = """{global_import}
 {solution_import}

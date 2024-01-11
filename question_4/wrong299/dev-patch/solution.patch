@@ -1,0 +1,15 @@
+--- question_4/wrong299/wrong_4_299.py	2023-11-27 23:06:57.972330213 +0200
++++ question_4/wrong299/reference.py	2023-11-27 23:06:57.972330213 +0200
+@@ -1,3 +1,8 @@
+-def sort_age ( var__0 ) : 
+-  return var__0 . sort ( key =  lambda var__3 : var__3 [ 1 ] ) 
+-
++def sort_age(lst):
++    for i in range(0, len(lst)-1):
++        for j in range(i+1, len(lst)):
++            if lst[i][1] < lst[j][1]:
++                tmp = lst[i]
++                lst[i] = lst[j]
++                lst[j] = tmp
++    return lst
+\ No newline at end of file

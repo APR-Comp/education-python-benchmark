@@ -1,0 +1,24 @@
+--- question_4/wrong284/wrong_4_284.py	2023-11-27 23:06:57.958996748 +0200
++++ question_4/wrong284/reference.py	2023-11-27 23:06:57.958996748 +0200
+@@ -1,12 +1,8 @@
+-def sort_age(lst):
+-    newlist = []
+-    while lst:
+-        oldest = lst[0]
+-        for i in lst:
+-            if i[1] > oldest:
+-                oldest = i
+-            else:
+-                continue
+-        lst.remove(oldest)
+-        newlist.append(oldest)
+-    return newlist
++def sort_age(lst):
++    for i in range(0, len(lst)-1):
++        for j in range(i+1, len(lst)):
++            if lst[i][1] < lst[j][1]:
++                tmp = lst[i]
++                lst[i] = lst[j]
++                lst[j] = tmp
++    return lst
+\ No newline at end of file

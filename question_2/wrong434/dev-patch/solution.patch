@@ -1,0 +1,28 @@
+--- question_2/wrong434/wrong_2_434.py	2023-11-27 23:06:57.798995179 +0200
++++ question_2/wrong434/reference.py	2023-11-27 23:06:57.795661813 +0200
+@@ -1,7 +1,19 @@
+-def unique_day ( var__0 , var__1 ) : 
+-  return
+-def unique_month ( var__2 , var__1 ) : 
+-  return 
+-def contains_unique_day ( var__2 , var__1 ) : 
+-  return 
++def unique_day(day, possible_birthdays):
++    count = 0
++    for birthday in possible_birthdays:
++        if birthday[1] == day:
++            count += 1
++    return count == 1
+ 
++def unique_month(month, possible_birthdays):
++    count = 0
++    for birthday in possible_birthdays:
++        if birthday[0] == month:
++            count += 1
++    return count == 1
++
++def contains_unique_day(month, possible_birthdays):
++    for birthday in possible_birthdays:
++        if birthday[0] == month and unique_day(birthday[1], possible_birthdays):
++            return True
++    return False

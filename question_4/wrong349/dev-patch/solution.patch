@@ -1,0 +1,27 @@
+--- question_4/wrong349/wrong_4_349.py	2023-11-27 23:06:58.015663971 +0200
++++ question_4/wrong349/reference.py	2023-11-27 23:06:58.015663971 +0200
+@@ -1,15 +1,8 @@
+-def sort_age ( var__0 ) : 
+-  var__1 = 0 
+-  var__2 = [ ] 
+-  try:
+-    WFcTxZbAPd=iter(var__0)
+-    while True:
+-      var__3=next(WFcTxZbAPd)
+-      if not var__3 [ 3 ] > var__1:        
+-        var__3 . append ( var__2 ) 
+-      else:
+-        var__2 . append ( var__3 ) 
+-  except StopIteration:
+-    pass
+-  return var__2 
+-
++def sort_age(lst):
++    for i in range(0, len(lst)-1):
++        for j in range(i+1, len(lst)):
++            if lst[i][1] < lst[j][1]:
++                tmp = lst[i]
++                lst[i] = lst[j]
++                lst[j] = tmp
++    return lst
+\ No newline at end of file

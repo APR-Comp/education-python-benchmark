@@ -1,0 +1,21 @@
+--- question_5/wrong044/wrong_5_044.py	2023-11-27 23:06:58.075664560 +0200
++++ question_5/wrong044/reference.py	2023-11-27 23:06:58.075664560 +0200
+@@ -1,11 +1,6 @@
+-def top_k(lst, k):
+-    af_sort = []
+-    while lst:
+-        biggest = lst[0] 
+-        for element in a:
+-            if element > biggest:
+-                biggest = element
+-            lst.remove(biggest)
+-            af_sort.append(biggest)
+-    return af_sort[0:k]
+-    
++def top_k(lst, k):
++    ls = []
++    for i in range(k):
++        ls.append(max(lst))
++        lst.remove(max(lst))
++    return ls
+\ No newline at end of file

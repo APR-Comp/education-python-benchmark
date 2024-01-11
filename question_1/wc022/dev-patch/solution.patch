@@ -1,0 +1,24 @@
+--- question_1/wc022/wrong_correct_1_022.py	2023-11-27 23:06:57.558992824 +0200
++++ question_1/wc022/reference.py	2023-11-27 23:06:57.558992824 +0200
+@@ -1,15 +1,5 @@
+-def search ( var__0 , var__1 ) : 
+-  var__2 = 0 
+-  try:
+-    We=iter(enumerate ( var__1 ))
+-    while True:
+-      var__3 , var__4=next(We)
+-      if not var__0 >= var__4:
+-        var__2 = var__3 + 1 
+-      else:
+-        var__2 = var__3 
+-        return var__2 
+-  except StopIteration:
+-    pass
+-  return var__2 
+-
++def search(x, seq):
++    for i in range(len(seq)):
++        if x <= seq[i]:
++            return i
++    return len(seq)
+\ No newline at end of file

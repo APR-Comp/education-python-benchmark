@@ -1,0 +1,23 @@
+--- question_5/wc004/wrong_correct_5_004.py	2023-11-27 23:06:58.022330703 +0200
++++ question_5/wc004/reference.py	2023-11-27 23:06:58.022330703 +0200
+@@ -1,12 +1,6 @@
+-def top_k ( var__0 , var__1 ) : 
+-  var__2 = [ ] 
+-  try:
+-    khVpcOD=iter(range ( var__1 ))
+-    while True:
+-      var__3=next(khVpcOD)
+-      var__2 . append ( max ( var__0 ) ) 
+-      var__0 . remove ( min ( var__0 ) ) 
+-    
+-  except StopIteration:
+-    pass
+-  return var__2
+\ No newline at end of file
++def top_k(lst, k):
++    ls = []
++    for i in range(k):
++        ls.append(max(lst))
++        lst.remove(max(lst))
++    return ls
+\ No newline at end of file

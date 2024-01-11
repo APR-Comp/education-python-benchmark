@@ -1,0 +1,32 @@
+--- question_4/wrong309/wrong_4_309.py	2023-11-27 23:06:57.978996945 +0200
++++ question_4/wrong309/reference.py	2023-11-27 23:06:57.978996945 +0200
+@@ -1,20 +1,8 @@
+-def sort_age ( var__0 ) : 
+-  try:
+-    eludI=iter(range ( len ( var__0 - 1 ) ))
+-    while True:
+-      var__1=next(eludI) 
+-      try:
+-        Zn=iter(range ( len ( var__0 ) - 1 - var__1 ))
+-        while True:
+-          var__2=next(Zn)
+-          if not var__0 [ var__2 ] [ 1 ] < var__0 [ var__2 + 1 ] [ 1 ]:
+-            continue 
+-          else:            
+-            var__0 [ var__2 ] [ 1 ] , var__0 [ var__2 + 1 ] [ 1 ] = var__0 [ var__2 + 1 ] [ 1 ] , var__0 [ var__2 ] [ 1 ] 
+-      except StopIteration:
+-        pass
+-  except StopIteration:
+-    pass
+-  return var__0 
+-  pass 
+-
++def sort_age(lst):
++    for i in range(0, len(lst)-1):
++        for j in range(i+1, len(lst)):
++            if lst[i][1] < lst[j][1]:
++                tmp = lst[i]
++                lst[i] = lst[j]
++                lst[j] = tmp
++    return lst
+\ No newline at end of file

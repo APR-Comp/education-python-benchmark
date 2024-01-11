@@ -1,0 +1,6 @@
+from wrong_1_494 import *
+
+import pytest
+@pytest.mark.timeout(5)
+def test_9683():
+    assert search(2,[881]) == 0

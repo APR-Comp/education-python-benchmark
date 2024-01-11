@@ -1,0 +1,6 @@
+from wrong_correct_3_031 import *
+
+import pytest
+@pytest.mark.timeout(5)
+def test_12556():
+    assert remove_extras([80370, 9]) == [80370, 9]
