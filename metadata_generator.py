@@ -48,10 +48,10 @@ def make_entry(
     name,
     inputs,
     correct_solutions,
-    passing_test_count,
-    failing_test_count,
-    passing_tests,
-    failing_tests,
+    passing_test_identifiers_count,
+    failing_test_identifiers_count,
+    passing_test_identifiers,
+    failing_test_identifiers,
 ):
     data = """
         {{
@@ -63,10 +63,10 @@ def make_entry(
             "correct_files": [{correct_solutions}],
             "extra_files": [{extra_files}],
             "line_numbers": [],
-            "failing_test": [{passing_tests}],
-            "passing_test": [{failing_tests}],
-            "count_neg": "{passing_test_count}",
-            "count_pos": "{failing_test_count}",
+            "failing_test_identifiers": [{passing_test_identifiers}],
+            "passing_test_identifiers": [{failing_test_identifiers}],
+            "count_neg": "{passing_test_identifiers_count}",
+            "count_pos": "{failing_test_identifiers_count}",
             "exploit_file_list": [{inputs}],
             "test_timeout": 5,
             "bug_type": "",
@@ -88,10 +88,10 @@ def make_entry(
         else "",
         correct_file="reference.py",
         inputs=inputs,
-        passing_tests=",".join(map(lambda f: '"{}"'.format(f), passing_tests)),
-        failing_tests=",".join(map(lambda f: '"{}"'.format(f), failing_tests)),
-        passing_test_count=passing_test_count,
-        failing_test_count=failing_test_count,
+        passing_test_identifiers=",".join(map(lambda f: '"{}"'.format(f), passing_test_identifiers)),
+        failing_test_identifiers=",".join(map(lambda f: '"{}"'.format(f), failing_test_identifiers)),
+        passing_test_identifiers_count=passing_test_identifiers_count,
+        failing_test_identifiers_count=failing_test_identifiers_count,
     )
 
     return data
@@ -103,18 +103,18 @@ def get_test_info(question, bug_id):
     os.system("/home/mmirchev/.local/bin/pytest --json-report --timeout=5")
     with open(".report.json") as f:
         report = json.loads(f.read())
-    passing_test_count = report["summary"].get("passed",0)
-    failing_test_count = report["summary"].get("failed",0)
-    passing_tests = []
-    failing_tests = []
+    passing_test_identifiers_count = report["summary"].get("passed",0)
+    failing_test_identifiers_count = report["summary"].get("failed",0)
+    passing_test_identifiers = []
+    failing_test_identifiers = []
     for test in report["tests"]:
        if test["outcome"] == "passed":
-           passing_tests.append(test["nodeid"])
+           passing_test_identifiers.append(test["nodeid"])
        else:
-           failing_tests.append(test["nodeid"])
+           failing_test_identifiers.append(test["nodeid"])
     os.remove(".report.json")
     os.chdir(cwd)
-    return passing_test_count, failing_test_count, passing_tests, failing_tests
+    return passing_test_identifiers_count, failing_test_identifiers_count, passing_test_identifiers, failing_test_identifiers
 
 def identity_op(question, bug_id):
     q_num = question.split("_")[1]
@@ -204,10 +204,10 @@ for question in questions:
                 [f'"{question}/ans/{x}"' for x in filtered_correct_set]
             )
             (
-                passing_test_count,
-                failing_test_count,
-                passing_tests,
-                failing_tests,
+                passing_test_identifiers_count,
+                failing_test_identifiers_count,
+                passing_test_identifiers,
+                failing_test_identifiers,
             ) = get_test_info(question, bug_id)
             data = make_entry(
                 id,
@@ -216,10 +216,10 @@ for question in questions:
                 name,
                 inputs,
                 correct_solutions,
-                passing_test_count,
-                failing_test_count,
-                passing_tests,
-                failing_tests,
+                passing_test_identifiers_count,
+                failing_test_identifiers_count,
+                passing_test_identifiers,
+                failing_test_identifiers,
             )
             file.write(data)
             #input()

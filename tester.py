@@ -20,10 +20,10 @@ def make_entry(
     name,
     inputs,
     correct_solutions,
-    passing_test_count,
-    failing_test_count,
-    passing_tests,
-    failing_tests,
+    passing_test_identifiers_count,
+    failing_test_identifiers_count,
+    passing_test_identifiers,
+    failing_test_identifiers,
     file_name
 ):
     data = """
@@ -36,10 +36,10 @@ def make_entry(
             "correct_files": [{correct_solutions}],
             "extra_files": [{extra_files}],
             "line_numbers": [],
-            "failing_test": [{failing_tests}],
-            "passing_test": [{passing_tests}],
-            "count_pos": {passing_test_count},
-            "count_neg": {failing_test_count},
+            "failing_test_identifiers": [{failing_test_identifiers}],
+            "passing_test_identifiers": [{passing_test_identifiers}],
+            "count_pos": {passing_test_identifiers_count},
+            "count_neg": {failing_test_identifiers_count},
             "exploit_file_list": [{inputs}],
             "test_timeout": 5,
             "bug_type": "",
@@ -62,10 +62,10 @@ def make_entry(
         else "",
         correct_file="reference.py",
         inputs=inputs,
-        passing_tests=",".join(map(lambda f: '"{}"'.format(f), passing_tests)),
-        failing_tests=",".join(map(lambda f: '"{}"'.format(f), failing_tests)),
-        passing_test_count=passing_test_count,
-        failing_test_count=failing_test_count,
+        passing_test_identifiers=",".join(map(lambda f: '"{}"'.format(f), passing_test_identifiers)),
+        failing_test_identifiers=",".join(map(lambda f: '"{}"'.format(f), failing_test_identifiers)),
+        passing_test_identifiers_count=passing_test_identifiers_count,
+        failing_test_identifiers_count=failing_test_identifiers_count,
     )
 
     return data
@@ -79,8 +79,8 @@ def get_test_info(question, bug_id):
     #print(os.getcwd())
     #input()
 
-    passing_tests = []
-    failing_tests = []
+    passing_test_identifiers = []
+    failing_test_identifiers = []
     #print("I AM IN {}".format(os.getcwd()))
     for test in sorted(os.listdir()):
         if os.path.isdir(test) or not test.endswith(".py") or test.startswith("wrong") or test.startswith('reference') or test.startswith('global'):
@@ -101,14 +101,14 @@ def get_test_info(question, bug_id):
         #input()
         # print(res)
         if res == 0:
-            passing_tests.append(qualified_test_name)
+            passing_test_identifiers.append(qualified_test_name)
         else:
-            failing_tests.append(qualified_test_name)
+            failing_test_identifiers.append(qualified_test_name)
             
     os.chdir(root)
     shutil.copy(os.path.join(root, 'run_test'),
                 os.path.join(question, bug_id, 'run_test'))
-    return len(passing_tests), len(failing_tests), passing_tests, failing_tests
+    return len(passing_test_identifiers), len(failing_test_identifiers), passing_test_identifiers, failing_test_identifiers
 
 for question in questions:
     os.chdir(root)
@@ -145,10 +145,10 @@ for question in questions:
             [f'"{question}/ans/{x}"' for x in filtered_correct_set]
         )
         (
-            passing_test_count,
-            failing_test_count,
-            passing_tests,
-            failing_tests,
+            passing_test_identifiers_count,
+            failing_test_identifiers_count,
+            passing_test_identifiers,
+            failing_test_identifiers,
         ) = get_test_info(question, bug_id)
 
 
@@ -162,10 +162,10 @@ for question in questions:
             name,
             inputs,
             correct_solutions,
-            passing_test_count,
-            failing_test_count,
-            passing_tests,
-            failing_tests,
+            passing_test_identifiers_count,
+            failing_test_identifiers_count,
+            passing_test_identifiers,
+            failing_test_identifiers,
             prob
         )
         file.write(data)
